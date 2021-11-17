@@ -136,8 +136,8 @@ void print_values(float *v, int N)
 int main()
 {
     int N = 500;
-    int width = 3840;
-    int height = 2160;
+    int width = 1920;
+    int height = 1080;
     int msX = 16;
     int msY = 16;
     float minX = -2.5;
