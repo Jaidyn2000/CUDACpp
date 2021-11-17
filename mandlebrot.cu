@@ -65,42 +65,6 @@ __global__ void mandlebrot(float *v, float minX, float maxX, float minY, float m
             v[xIndex + yIndex * width + width * height] = val;
             v[xIndex + yIndex * width + width * height * 2] = 0;
         }
-        else if (val < 512)
-        {
-            v[xIndex + yIndex * width] = 255;
-            v[xIndex + yIndex * width + width * height] = (int)fmod(val,256.0);
-            v[xIndex + yIndex * width + width * height * 2] = 0;
-        }
-        else if (val < 768)
-        {
-            v[xIndex + yIndex * width] = 256 - (int)fmod(val, 256.0);
-            v[xIndex + yIndex * width + width * height] = 255;
-            v[xIndex + yIndex * width + width * height * 2] = 0;
-        }
-        else if (val < 1024)
-        {
-            v[xIndex + yIndex * width] = 0;
-            v[xIndex + yIndex * width + width * height] = 255;
-            v[xIndex + yIndex * width + width * height * 2] = (int)fmod(val, 256.0);
-        }
-        else if (val < 1280)
-        {
-            v[xIndex + yIndex * width] = 0;
-            v[xIndex + yIndex * width + width * height] = 256 - (int)fmod(val, 256.0);
-            v[xIndex + yIndex * width + width * height * 2] = 255;
-        }
-        else if (val < 1536)
-        {
-            v[xIndex + yIndex * width] = (int)fmod(val, 256.0);
-            v[xIndex + yIndex * width + width * height] = 0;
-            v[xIndex + yIndex * width + width * height * 2] = 255;
-        }
-        else if (val < 1792)
-        {
-            v[xIndex + yIndex * width] = 255;
-            v[xIndex + yIndex * width + width * height] = 0;
-            v[xIndex + yIndex * width + width * height * 2] = 256 - (int)fmod(val, 256.0);
-        }
     }
     else
     {
